@@ -1,18 +1,16 @@
 import React, {Component} from 'react';
 
-export default class EyesOnMe extends Component{
+export default class Keypad extends Component{
 
-  handleFocusIn = () => console.log('Good!')
-
-  handleFocusOut = () => console.log('Hey! Eyes on me!')
+  handleKeypress = () => {
+    console.log('Entering password...')
+  }
 
   render(){
     return (
-      <button
-        onFocus={this.handleFocusIn}
-        onBlur={this.handleFocusOut}>
-        Submit
-      </button>
+      <input
+        type='password'
+        onKeyUp={this.handleKeypress}/>
     )
   }
 }
